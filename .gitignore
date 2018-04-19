@@ -1,0 +1,6 @@
+media/
+static/
+**/migrations
+**/__pycache__
+*.pyc
+*.sqlite3

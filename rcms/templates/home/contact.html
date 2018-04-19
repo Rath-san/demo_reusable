@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% comment %} {% load wagtailcore_tags wagtailimages_tags %} {% endcomment %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+    <h1>Contact</h1>
+    <form role="form" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    {% comment %} {{ page.title }}
+    {% image page.splash_image width-1000 as tmp_photo %}
+    <img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}" height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" class="my-custom-class"/>
+    {{ page.body|richtext }}  {% endcomment %}
+{% endblock %}
